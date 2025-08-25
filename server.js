@@ -1,11 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
 import {neon} from "@neondatabase/serverless";
+import cors from "cors"; 
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const sql = neon(process.env.DB_URL);
 
